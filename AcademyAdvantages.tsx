@@ -5,6 +5,7 @@ import {
   Users,
   Target,
   Award,
+  CheckCircle2,
 } from "lucide-react";
 
 const faculty = [
@@ -79,6 +80,39 @@ const highlights = [
   },
 ];
 
+const advantages = [
+  {
+    title: "Structured Study Plan",
+    description: "Comprehensive curriculum designed by IITians and top educators",
+    color: "from-blue-500 to-blue-600"
+  },
+  {
+    title: "Daily Practice Problems",
+    description: "Carefully curated problems to strengthen concepts daily",
+    color: "from-purple-500 to-purple-600"
+  },
+  {
+    title: "Doubt Solving Sessions",
+    description: "Dedicated doubt clearing sessions with expert faculty",
+    color: "from-green-500 to-green-600"
+  },
+  {
+    title: "Mock Tests",
+    description: "Regular full-length mock tests simulating actual exams",
+    color: "from-orange-500 to-orange-600"
+  },
+  {
+    title: "Revision Strategy",
+    description: "Systematic revision schedules for better retention",
+    color: "from-pink-500 to-pink-600"
+  },
+  {
+    title: "Exam Readiness Program",
+    description: "Final preparation phase with tips and strategies",
+    color: "from-indigo-500 to-indigo-600"
+  },
+];
+
 export function AcademyAdvantages() {
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -100,62 +134,7 @@ export function AcademyAdvantages() {
             and result-oriented coaching for IIT-JEE, NEET, Foundation,
             Olympiads and Board Examinations.
           </p>
-        </motion.div>
-
-        {/* About Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-
-        <motion.div
-  initial={{ opacity: 0, x: -40 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  className="text-center"
->
-  <img
-    src="/vijay.png"
-    alt="Managing Director"
-    className="rounded-3xl shadow-2xl w-full max-w-md mx-auto"
-  />
-
-  <h3 className="text-2xl font-bold text-blue-900 mt-6">
-    Sri Bokinala Vijay Kumar
-  </h3>
-
- <p className="text-lg text-orange-500 font-semibold mt-2">
-    Managing Director
-  </p>
-  <p className="text-gray-500 text-sm mt-1">
-    Sathvika Coaching Academy
-  </p>
-</motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-3xl font-bold text-blue-900 mb-6">
-              Message from the Managing Director
-            </h3>
-
-            <p className="text-gray-700 leading-8 mb-5">
-             At Sathvika Coaching Academy, we believe that every student has the
-  potential to achieve excellence with the right guidance, dedication,
-  and consistent effort. Our goal is to inspire confidence, build strong
-  fundamentals, and prepare students to face every academic challenge
-  with determination.
-            </p>
-
-            <p className="text-gray-700 leading-8">
-              With a team of highly experienced faculty members, modern teaching
-  methodologies, regular assessments, and individual mentoring, we are
-  committed to helping every student excel in IIT-JEE, NEET, Foundation,
-  Olympiads, and Board Examinations. I warmly welcome you to the
-  Sathvika family and wish you every success in your academic journey.
-            </p>
-          </motion.div>
-
-        </div>
+        </motion.div>  
 
        <h2 className="text-4xl font-bold text-center text-blue-900 mb-4">
   Meet Our Expert Faculty
@@ -205,6 +184,93 @@ export function AcademyAdvantages() {
   ))}
 </div>
 
+        
+{/* Academy Advantages */}
+
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="text-center mb-16"
+>
+  <h2 className="text-4xl font-bold text-blue-900 mb-4">
+    Our Academic Excellence
+  </h2>
+
+  <p className="text-xl text-gray-600">
+    Our systematic approach to excellence
+  </p>
+</motion.div>
+
+        <div className="relative">
+  {/* Timeline Line */}
+  <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-orange-500 hidden md:block"></div>
+          
+
+  {/* Timeline Items */}
+  <div className="space-y-12">
+    {advantages.map((advantage, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1 }}
+        className={`flex items-center gap-8 ${
+          index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+        }`}
+      >
+        {/* Content */}
+        <div
+          className={`flex-1 ${
+            index % 2 === 0 ? "md:text-right" : "md:text-left"
+          }`}
+        >
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
+            <div
+              className="flex items-start gap-4 md:justify-end"
+              style={{
+                flexDirection:
+                  index % 2 === 0 ? "row-reverse" : "row",
+              }}
+            >
+              <div
+                className={`w-12 h-12 bg-gradient-to-br ${advantage.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+              >
+<CheckCircle2 className="w-6 h-6 text-white" />
+              </div>
+
+              <div
+                className={
+                  index % 2 === 0 ? "text-right" : "text-left"
+                }
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {advantage.title}
+                </h3>
+
+                <p className="text-gray-600">
+                  {advantage.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Timeline Dot */}
+        <div className="hidden md:block">
+          <div
+            className={`w-6 h-6 bg-gradient-to-br ${advantage.color} rounded-full border-4 border-white shadow-lg`}
+          ></div>
+        </div>
+
+        {/* Spacer */}
+        <div className="hidden md:block flex-1"></div>
+      </motion.div>
+    ))}
+  </div>
+</div>
+<div className="mt-20"></div>
 {/* Why Choose Sathvika */}
 
 <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
