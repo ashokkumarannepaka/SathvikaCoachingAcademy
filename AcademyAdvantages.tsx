@@ -105,17 +105,29 @@ export function AcademyAdvantages() {
         {/* About Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
 
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <img
-              src="/vijay.png"
-              alt="Director"
-              className="rounded-3xl shadow-2xl w-full max-w-md mx-auto"
-            />
-          </motion.div>
+        <motion.div
+  initial={{ opacity: 0, x: -40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="text-center"
+>
+  <img
+    src="/vijay.png"
+    alt="Managing Director"
+    className="rounded-3xl shadow-2xl w-full max-w-md mx-auto"
+  />
+
+  <h3 className="text-2xl font-bold text-blue-900 mt-6">
+    Sri Bokinala Vijay Kumar
+  </h3>
+
+ <p className="text-lg text-orange-500 font-semibold mt-2">
+    Managing Director
+  </p>
+  <p className="text-gray-500 text-sm mt-1">
+    Sathvika Coaching Academy
+  </p>
+</motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 40 }}
@@ -123,18 +135,23 @@ export function AcademyAdvantages() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-blue-900 mb-6">
-              Welcome to Sathvika Coaching Academy
+              Message from the Managing Director
             </h3>
 
             <p className="text-gray-700 leading-8 mb-5">
-              Sathvika Coaching Academy is committed to nurturing young minds
-              through quality education, discipline, and innovative teaching.
+             At Sathvika Coaching Academy, we believe that every student has the
+  potential to achieve excellence with the right guidance, dedication,
+  and consistent effort. Our goal is to inspire confidence, build strong
+  fundamentals, and prepare students to face every academic challenge
+  with determination.
             </p>
 
             <p className="text-gray-700 leading-8">
-              Our experienced faculty members provide personalized mentoring
-              and structured learning that empowers students to excel in
-              competitive examinations.
+              With a team of highly experienced faculty members, modern teaching
+  methodologies, regular assessments, and individual mentoring, we are
+  committed to helping every student excel in IIT-JEE, NEET, Foundation,
+  Olympiads, and Board Examinations. I warmly welcome you to the
+  Sathvika family and wish you every success in your academic journey.
             </p>
           </motion.div>
 
