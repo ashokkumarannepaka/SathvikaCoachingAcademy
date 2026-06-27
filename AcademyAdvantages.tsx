@@ -1,12 +1,5 @@
 import { motion } from "motion/react";
-import {
-  BookOpen,
-  GraduationCap,
-  Users,
-  Target,
-  Award,
-  CheckCircle2,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const faculty = [
   {
@@ -53,32 +46,7 @@ const faculty = [
   },
 ];
 
-const highlights = [
-  {
-    icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
-    title: "Experienced Faculty",
-    description:
-      "Highly qualified faculty members with extensive teaching experience.",
-  },
-  {
-    icon: <BookOpen className="w-8 h-8 text-orange-500" />,
-    title: "Concept-Based Learning",
-    description:
-      "Strong focus on conceptual understanding and problem-solving skills.",
-  },
-  {
-    icon: <Users className="w-8 h-8 text-green-600" />,
-    title: "Personal Mentoring",
-    description:
-      "Individual attention with continuous progress monitoring.",
-  },
-  {
-    icon: <Target className="w-8 h-8 text-purple-600" />,
-    title: "Result-Oriented Training",
-    description:
-      "Focused preparation for IIT-JEE, NEET, Olympiads and Board Exams.",
-  },
-];
+
 
 const advantages = [
   {
@@ -269,38 +237,6 @@ export function AcademyAdvantages() {
       </motion.div>
     ))}
   </div>
-</div>
-<div className="mt-20"></div>
-{/* Why Choose Sathvika */}
-
-<h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
-  Why Choose Sathvika Coaching Academy?
-</h2>
-
-<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-  {highlights.map((item, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ scale: 1.05 }}
-      className="bg-white rounded-2xl shadow-lg p-6 text-center"
-    >
-      <div className="flex justify-center mb-4">
-        {item.icon}
-      </div>
-
-      <h3 className="text-xl font-bold mb-3">
-        {item.title}
-      </h3>
-
-      <p className="text-gray-600">
-        {item.description}
-      </p>
-    </motion.div>
-  ))}
 </div>
               </div>
     </section>
