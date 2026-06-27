@@ -148,7 +148,7 @@ export function AcademyAdvantages() {
   Our experienced faculty members are committed to nurturing academic excellence and guiding every student toward success.
 </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
   {faculty.map((member, index) => (
     <motion.div
       key={index}
@@ -157,22 +157,24 @@ export function AcademyAdvantages() {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -8 }}
-      className="bg-white rounded-3xl shadow-xl overflow-hidden"
+      className="bg-white rounded-3xl shadow-xl p-6 text-center hover:shadow-2xl transition-all duration-300"
     >
-      <img
-        src={member.image}
-        alt={member.name}
-        className="w-full h-80 object-cover"
-      />
+  <div className="flex justify-center pt-6">
+  <img
+    src={member.image}
+    alt={member.name}
+    className="w-40 h-40 rounded-xl object-cover border-4 border-blue-100 shadow-md"
+  />
+</div>
 
       <div className="p-6 text-center">
-        <h3 className="text-2xl font-bold text-blue-900">
+        <h3 className="text-xl font-bold text-blue-900 mt-5">
           {member.name}
         </h3>
 
-        <p className="text-orange-500 font-semibold mt-2">
-          {member.designation}
-        </p>
+  <span className="inline-block mt-3 bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-semibold">
+  {member.designation}
+</span>
 
         <p className="text-gray-700 mt-3">
           <strong>Subject:</strong> {member.subject}
